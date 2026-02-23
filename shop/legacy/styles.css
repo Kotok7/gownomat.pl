@@ -1,0 +1,766 @@
+        :root {
+            --primary: #0a1929;
+            --accent: #1e88e5;
+            --secondary: #f5f7fa;
+            --highlight: #42a5f5;
+            --text: #1a2332;
+            --border: #d0d7de;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .logo-sub {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.75rem;
+            color: #6b7280;
+            margin-top: 4px;
+            letter-spacing: 0.05em;
+            opacity: 0.8;
+        }
+
+        #overlay {
+            position: fixed;
+            inset: 0;
+            background: black;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            cursor: pointer;
+            z-index: 9999;
+            user-select: none;
+        }
+
+        .contactForm {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 500px;
+            margin: 30px auto;
+            font-family: 'Syne', sans-serif;
+        }
+
+        .contactForm input,
+        .contactForm textarea {
+            padding: 12px 15px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border 0.3s, box-shadow 0.3s;
+        }
+
+        .contactForm input:focus,
+        .contactForm textarea:focus {
+            border-color: #42a5f5;
+            box-shadow: 0 0 5px #42a5f5;
+            outline: none;
+        }
+
+        .contactForm textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .contactForm button {
+            background-color: #42a5f5;
+            color: #fff;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .contactForm button:hover {
+            background-color: #0071cd;
+            transform: translateY(-2px);
+        }
+
+        .formStatus {
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 1rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Serif 4', serif;
+            background: var(--secondary);
+            color: var(--text);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.03;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, var(--primary) 35px, var(--primary) 70px),
+                repeating-linear-gradient(-45deg, transparent, transparent 35px, var(--primary) 35px, var(--primary) 70px);
+            animation: patternShift 20s linear infinite;
+        }
+
+        @keyframes patternShift {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(70px, 70px); }
+        }
+
+        header {
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .logo {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: var(--primary);
+        }
+
+        .badge {
+            background: var(--accent);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
+            font-family: 'Syne', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .hero {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 5%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-content {
+            animation: fadeInLeft 1s ease-out 0.3s both;
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+        }
+
+        .highlight {
+            color: var(--accent);
+            position: relative;
+            display: inline-block;
+        }
+
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 0.2rem;
+            left: 0;
+            width: 100%;
+            height: 0.5rem;
+            background: var(--highlight);
+            z-index: -1;
+            animation: expandWidth 1s ease-out 1s both;
+        }
+
+        @keyframes expandWidth {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        .description {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--text);
+            opacity: 0.8;
+        }
+
+        .price-tag {
+            font-family: 'Syne', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 2rem;
+            animation: fadeIn 1s ease-out 0.8s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .product-showcase {
+            position: relative;
+            animation: fadeInRight 1s ease-out 0.5s both;
+        }
+
+        @keyframes fadeInRight {
+            from {
+                transform: translateX(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .product-image {
+            width: 100%;
+            aspect-ratio: 1;
+            background: var(--accent);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .product-image::before {
+            content: 'image coming soon';
+            font-family: 'Syne', sans-serif;
+            font-size: 4.5rem;
+            font-weight: 800;
+            color: rgba(255,255,255,0.3);
+            animation: rotate360 20s linear infinite;
+        }
+
+        @keyframes rotate360 {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .floating-badge {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            animation: float 3s ease-in-out infinite;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .features {
+            max-width: 1100px;
+            margin: 4rem auto;
+            padding: 0 5%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 1.8rem;
+            border-radius: 15px;
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.8s ease-out both;
+        }
+
+        .feature-card:nth-child(1) { animation-delay: 0.2s; }
+        .feature-card:nth-child(2) { animation-delay: 0.4s; }
+        .feature-card:nth-child(3) { animation-delay: 0.6s; }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--accent);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: var(--primary);
+        }
+
+        .payment-section {
+            max-width: 750px;
+            margin: 4rem auto;
+            padding: 3rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.1);
+            animation: scaleIn 0.8s ease-out 0.8s both;
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .payment-section h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        .crypto-addresses {
+            display: grid;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .crypto-item {
+            background: var(--secondary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .crypto-item:hover {
+            border-color: var(--accent);
+            transform: translateX(5px);
+        }
+
+        .crypto-label {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+.crypto-address {
+    font-family: monospace;
+    font-size: 0.95rem;
+    color: var(--text);
+    word-break: break-all;
+    background: white;
+    padding: 0.8rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.crypto-addresses {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+}
+
+        .crypto-address:hover {
+            background: #e3f2fd;
+            border-color: var(--accent);
+        }
+
+        .crypto-address:active {
+            transform: scale(0.98);
+        }
+
+        .copy-notification {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: var(--primary);
+            color: white;
+            padding: 1.5rem 2.5rem;
+            border-radius: 12px;
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .copy-notification.show {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .cta-button {
+            display: block;
+            width: 100%;
+            padding: 1.5rem;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-family: 'Syne', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+        }
+
+        .cta-button:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--highlight);
+            margin: 2rem 0;
+        }
+
+        .info-box h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .info-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .info-box li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .info-box li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 5%;
+            margin-top: 4rem;
+            border-top: 1px solid var(--border);
+            color: var(--text);
+            opacity: 0.7;
+        }
+
+        @media (max-width: 968px) {
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .payment-section {
+                padding: 2rem;
+            }
+        }
+
+        header .controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .mute-btn {
+            background: transparent;
+            border: 2px solid var(--border);
+            padding: 8px 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.05rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.18s, transform 0.12s, border-color 0.18s;
+        }
+
+        .mute-btn:hover {
+            transform: translateY(-2px);
+            background: rgba(0,0,0,0.03);
+        }
+
+        .mute-btn.muted {
+            border-color: #ff5252;
+            background: rgba(255,82,82,0.06);
+            color: #ff5252;
+        }
+
+        .mute-btn i { pointer-events: none; }
+
+        @media (max-width: 968px) {
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.4rem;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .payment-section {
+        padding: 1.5rem;
+    }
+
+    .crypto-addresses {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .crypto-item {
+        padding: 1.25rem;
+    }
+
+    .cta-button {
+        padding: 1rem;
+        font-size: 1.1rem;
+    }
+
+    .badge {
+        display: none;
+    }
+
+    header {
+        padding: 16px 4%;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .logo-sub {
+        font-size: 0.7rem;
+    }
+
+    .product-image::before {
+        font-size: 2rem;
+    }
+
+    .floating-badge {
+        top: -10px;
+        right: -10px;
+        padding: 8px 12px;
+    }
+
+    .mute-btn {
+        padding: 6px 8px;
+    }
+
+    .copy-notification {
+        font-size: 0.9rem;
+        padding: 12px 18px;
+    }
+
+    .payment-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .feature-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .info-box h3 {
+        font-size: 1.2rem;
+    }
+
+    footer {
+        padding: 1.5rem 5%;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 420px) {
+    header {
+        padding: 12px 4%;
+    }
+
+    .hero {
+        margin-top: 1rem;
+        padding: 0 5%;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .price-tag {
+        font-size: 1.3rem;
+    }
+
+    .cta-button {
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .product-image::before {
+        font-size: 1.5rem;
+    }
+
+    .floating-badge {
+        top: -6px;
+        right: -6px;
+        padding: 6px 10px;
+    }
+
+    .feature-card {
+        padding: 1rem;
+    }
+
+    .payment-section {
+        padding: 1rem;
+        border-radius: 10px;
+    }
+
+    footer {
+        padding: 1.25rem;
+        font-size: 0.85rem;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .logo-sub {
+        font-size: 0.65rem;
+    }
+}
+
+.top-links {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.top-btn {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  font-size: 0.95rem;
+}
+
+.top-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(30,136,229,0.18);
+}
+
+@media (max-width: 420px) {
+  .top-links {
+    display: none;
+  }
+}
