@@ -1,0 +1,26 @@
+[
+    {
+        "first_name": "Travis",
+        "last_name": "Scott",
+        "nickname": "Bubu",
+        "description": "Gaga",
+        "photo": null,
+        "created_at": "2026-01-25T22:43:29+00:00"
+    },
+    {
+        "first_name": "Wiktor",
+        "last_name": "Oźyp",
+        "nickname": "Vixi",
+        "description": "fucking retard and a borderline sexual abuser",
+        "photo": "uploads\/64c30a14bfaa0da6.gif",
+        "created_at": "2026-01-25T22:55:44+00:00"
+    },
+    {
+        "first_name": "igor",
+        "last_name": "l",
+        "nickname": "muchacho",
+        "description": "zabral mi ladowarke",
+        "photo": null,
+        "created_at": "2026-02-25T13:45:39+00:00"
+    }
+]
