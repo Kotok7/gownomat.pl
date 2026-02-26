@@ -25,12 +25,12 @@ require 'config.php';
     <h3>Tapety</h3>
     <p>Wybierz wersję do pobrania</p>
     <div class="wp-btns">
-      <a href="photos/gownomat-na-komputr.png" download class="wp-btn">
+      <a href="/main/photos/gownomat-na-komputr.png" download class="wp-btn">
         <span class="wp-icon">🖥</span>
         Komputer
         <span class="wp-label">tapeta na zimnioka</span>
       </a>
-      <a href="photos/gownomat-na-trapphone.png" download class="wp-btn">
+      <a href="/main/photos/gownomat-na-trapphone.png" download class="wp-btn">
         <span class="wp-icon">📱</span>
         Telefon
         <span class="wp-label">tapeta na trapphona</span>
@@ -41,16 +41,16 @@ require 'config.php';
 
 <div id="main-page">
   <video id="bg" autoplay muted loop playsinline>
-  <source src="photos/pozar.mp4" type="video/mp4">
+  <source src="/main/photos/pozar.mp4" type="video/mp4">
 </video>
 
   <nav>
     <button id="wp-open-btn" class="nav-btn" type="button">Tapety</button>
     <button id="change-music" class="nav-btn" type="button">Change music</button>
-    <a href="/shop/photos/sprzedaz.mp4" target="_blank">Wideo z zakupu domeny</a>
-    <a href="shop/index.php" target="_blank">Shop</a>
-    <a href="clowns/index.php" target="_blank">Hall of Clowns</a>
-    <a href="https://kotokk.xyz" target="_blank">kotokk.xyz</a>
+    <a href="/shop/photos/sprzedaz.mp4">Wideo z zakupu domeny</a>
+    <a href="https://gownomat.mysellauth.com">Shop</a>
+    <a href="/clowns/index.php">Hall of Clowns</a>
+    <a href="https://kotokk.xyz">kotokk.xyz</a>
   </nav>
 
   <div id="discord-banner">
@@ -65,7 +65,7 @@ require 'config.php';
     <div id="discord-div">
       <div id="game-div">
         <div class="image-status">
-          <img src="photos/discord-profile.png" style="border-radius: 50px;">
+          <img src="/main/photos/discord-profile.png" style="border-radius: 50px;">
           <div id="status-mini-icon">
             <div id="status-mini-icon-2"></div>
           </div>
