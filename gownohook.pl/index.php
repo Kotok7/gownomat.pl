@@ -46,11 +46,11 @@ require 'config.php';
 
   <nav>
     <button id="wp-open-btn" class="nav-btn" type="button">Tapety</button>
-    <button id="change-music" class="nav-btn" type="button">Change music</button>
+    <button id="change-music" class="nav-btn" type="button">Zmień muzykę</button>
+    <a href="https://gownomat.pl">Gównomat</a>
     <a href="photos/sprzedaz.mp4">Wideo z zakupu domeny</a>
-    <a href="https://gownomat.mysellauth.com">Shop</a>
-    <a href="https://gownohook.pl/clowns">Hall of Clowns</a>
-    <a href="https://gownohook.pl">Gównohook.pl</a>
+    <a href="clowns/index.php">Hall of Clowns</a>
+    <a href="https://kotokk.xyz">kotokk.xyz</a>
   </nav>
 
   <div id="discord-banner">
@@ -185,8 +185,8 @@ document.getElementById('messageForm').addEventListener('submit', async function
     <span id="vol-val">50%</span>
   </div>
 
-  <footer>© kotokkz<br>
-contact: support@gownomat.pl / null@kotokk.xyz
+  <footer>© kotokkz | gownomat.pl & gownohook.pl<br>
+contact: null@kotokk.xyz
 </footer>
 </div>
 
